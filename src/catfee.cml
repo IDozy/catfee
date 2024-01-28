@@ -1,0 +1,39 @@
+ContextMap Catfee{
+    contains OrdenesContext
+    contains ReservasContext
+    contains InventarioContext
+    contains PagosContext
+    contains MenuContext
+    contains EmpleadosContext
+
+        OrdenesContext [P]<->[P] PagosContext
+
+        OrdenesContext [P]<->[P] InventarioContext
+
+        OrdenesContext[U, OHS]->[D] EmpleadosContext
+
+        OrdenesContext [U, OHS]->[D] MenuContext
+
+        ReservasContext [U, OHS]->[D] EmpleadosContext
+
+        MenuContext [U, OHS]->[D] InventarioContext
+}
+
+BoundedContext OrdenesContext{
+}
+
+BoundedContext ReservasContext{
+}
+
+BoundedContext InventarioContext{
+}
+
+BoundedContext PagosContext{
+}
+
+BoundedContext MenuContext{
+}
+
+BoundedContext EmpleadosContext{
+}
+
